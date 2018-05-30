@@ -1,7 +1,7 @@
 #include "kmp.h"
 
 //  префикс функция
-std::vector<size_t> KMP::prefixFunc (std::string pattern)
+std::vector<size_t> KMP::prefixFunc (std::string& pattern)
 {
     size_t length = pattern.length();
     std::vector<size_t> prefixVector(length);
@@ -20,7 +20,7 @@ std::vector<size_t> KMP::prefixFunc (std::string pattern)
 }
 
 //  алгоритм Кнута-Морриса-Пратта
-std::vector<long int> KMP::kmpAlgorithm (std::string pattern, std::string text)
+std::vector<long int> KMP::kmpAlgorithm (std::string& pattern, std::string& text)
 {
     std::vector<size_t> prefixVector = prefixFunc(pattern);
     std::vector<long int> indexVector;
@@ -52,7 +52,7 @@ std::vector<long int> KMP::kmpAlgorithm (std::string pattern, std::string text)
 }
 
 //  алгоритм Кнута-Морриса-Пратта для сдвига (первое вхождение)
-long int KMP::kmpShiftAlgorithm (std::string pattern, std::string text)
+long int KMP::kmpShiftAlgorithm (std::string& pattern, std::string& text)
 {
     std::vector<size_t> prefixVector = prefixFunc(pattern);
     size_t lenPattern = pattern.length();
@@ -77,7 +77,7 @@ long int KMP::kmpShiftAlgorithm (std::string pattern, std::string text)
 }
 
 //  наивный алгоритм поиска подстроки (возвращает количество сравнений)
-std::vector<long int> KMP::naiveAlgorithm (std::string pattern, std::string text)
+std::vector<long int> KMP::naiveAlgorithm (std::string& pattern, std::string& text)
 {
     std::vector<long int> indexVector;
     size_t lenPattern = pattern.length();

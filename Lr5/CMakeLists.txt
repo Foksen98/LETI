@@ -10,6 +10,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 add_executable(patternSearch src/patternSearch.cpp src/kmp.cpp src/kmp.h)
 add_executable(shiftSearch src/shiftSearch.cpp src/kmp.cpp src/kmp.h)
+add_executable(naiveSearch src/naiveSearch.cpp src/kmp.cpp src/kmp.h)
+add_executable(comparisonTest src/comparisonTest.cpp src/algComparison.cpp src/algComparison.h)
 
 add_executable(testPrefix test/testPrefix.cpp test/kmpTest.cpp test/kmpTest.h src/kmp.cpp src/kmp.h)
 add_executable(testPattern test/testPattern.cpp test/kmpTest.cpp test/kmpTest.h src/kmp.cpp src/kmp.h)
